@@ -10,8 +10,8 @@ def main():
     #url = 'https://portaal1.rztienen.be:8443'
     #url = 'https://portaal1.rztienen.be:8443/portal/PortalSetup.action?portal=4f1ab610-d83f-11e8-a0ab-bea55ce933d8&sessionId=0be1340a001bf5ecc91be25f&action=cwa&redirect=www.msftconnecttest.com%2Fredirect'
     #url ='http://1.1.1.1'
-    #url = 'http://www.msftconnecttest.com/redirect'
-    url = 'https://portaal1.rztienen.be:8443/portal/PortalSetup.action?portal=4f1ab610-d83f-11e8-a0ab-bea55ce933d8'
+    url = 'http://www.msftconnecttest.com/redirect'
+    #url = 'https://portaal1.rztienen.be:8443/portal/PortalSetup.action?portal=4f1ab610-d83f-11e8-a0ab-bea55ce933d8'
 
     with requests.Session() as session:
         response = session.get(url)
@@ -28,8 +28,8 @@ def main():
         data = {'user.username': username,
                 'user.password': password,
                 'portal': portal,
-                'token': token,
-                'response': response}
+                'token': token} #,
+                #'response': response}
 
         r_post = session.post(url,data=data)
 
